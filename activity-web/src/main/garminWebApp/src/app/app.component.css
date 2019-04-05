@@ -1,0 +1,13 @@
+
+.cycling, .add_user{
+  float: inherit;
+  width: 30%;
+}
+.running{
+  float: left;
+  width: 30%;
+}
+ul, menu, dir {
+  display: contents;
+
+}

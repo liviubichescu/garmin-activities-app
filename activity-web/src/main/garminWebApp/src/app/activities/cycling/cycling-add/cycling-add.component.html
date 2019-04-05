@@ -1,0 +1,52 @@
+<div class="add_user"> Add a manual Activity <br>
+  <label>
+    Activity name:
+  </label>
+  <input #name>
+  <br>
+  <label>
+    Activity type:
+  </label>
+  <select #typess [(ngModel)]="typess.value" (change)="onChange($event)">
+    <option *ngFor="let type_item of activTypes" [value]="type_item">
+      {{type_item}}
+    </option>
+  </select>
+  <br>
+  <label>
+    Date:
+  </label>
+  <input #dateTime>
+  <br>
+  <label>
+    Duration:
+  </label>
+  <input #duration>
+  <br>
+  <label>
+    Distance:
+  </label>
+  <input #distance>
+  <br>
+  <label>
+    Unit:
+  </label>
+  <select #unit [(ngModel)]="unit.value" (change)="onChange($event)" >
+    <option *ngFor="let unit of distanceUnit" [value]="unit">
+      {{unit}}
+    </option>
+  </select>
+  <!--<div *ngIf="unit.value === 'Kilometers'">-->
+    <!--{{distance.value = convertToKm(1000)}}-->
+  <!--</div>-->
+  <br>
+  <div *ngIf="typess.value === 'CYCLING'">
+    <button (click)="save(name.value, typess.value, dateTime.value, duration.value, distance.value)">Save
+    </button>
+  </div>
+</div>
+
+
+
+
+

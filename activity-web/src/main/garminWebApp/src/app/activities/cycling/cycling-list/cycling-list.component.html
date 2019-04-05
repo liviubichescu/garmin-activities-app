@@ -1,0 +1,36 @@
+<table class="tableCtrl">Activities
+
+  <tbody *ngFor="let utilizator of activitiesData">
+  <tr *ngIf="utilizator.type === 'CYCLING'">
+    <td>
+      <table class="activity_table">
+        <tr>
+          <td>
+            <div class="activity_type_img">
+              <img src="../../../../assets/cycling.png">
+            </div>
+          </td>
+          <td>{{ parseMyDate(utilizator.dateTime) | date:'MMM dd' }}
+            <p>{{ parseMyDate(utilizator.dateTime) | date:'yyyy' }}</p>
+          </td>
+          <td>{{utilizator.name}}
+            <p>{{utilizator.type}}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>{{calculateKm(utilizator.distance)}} Km
+            <p>DISTANCE</p>
+          </td>
+          <td>{{utilizator.duration}}
+            <p>TIME</p>
+          </td>
+          <td>{{utilizator.avgSpeed}}
+            <p>AVG SPEED</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  </tbody>
+</table>

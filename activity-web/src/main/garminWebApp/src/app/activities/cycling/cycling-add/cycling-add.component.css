@@ -1,0 +1,45 @@
+.add_user{
+  padding-right: 60px;
+  width: 30%;
+  float: left;
+  font-size: 30px;
+}
+label {
+  display: inline-block;
+  width: 8em;
+  margin: .5em 0;
+  color: #607D8B;
+  font-weight: bold;
+  font-size: 16px;
+
+}
+input, select, option {
+  height: 2em;
+  /*font-size: 1em;*/
+  padding-left: .4em;
+  margin-left: 40px;
+  font-size: 14px;
+
+}
+button {
+  margin-top: 30px;
+  background-color: #00ee24;
+  border: none;
+  padding: 15px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 20px;
+}
+/*button:hover {*/
+  /*padding: 20px;*/
+  /*background-color: #cfd8dc;*/
+/*}*/
+button:disabled {
+  padding: 20px;
+  background-color: #eee;
+  color: #ccc;
+  cursor: auto;
+}
+div{
+  display: inline-block;
+}
