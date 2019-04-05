@@ -1,9 +1,7 @@
 package ro.garmin.activity.web.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import ro.garmin.activity.core.model.activities.Unit;
 
 import java.util.Date;
 
@@ -11,21 +9,14 @@ import java.util.Date;
 @AllArgsConstructor
 @Getter
 @Setter
+@ToString(callSuper = true)
 public class ActivityDto extends BaseDto {
 
     private String name;
     private Date dateTime;
     private long duration;
     private long distance;
+    private Unit type;
 
-    @Override
-    public String toString() {
-        return "ActivityDto{" +
-                "name='" + name + '\'' +
-                ", dateTime=" + dateTime +
-                ", duration=" + duration +
-                ", distance=" + distance +
-                '}'+ super.toString();
-    }
 
 }

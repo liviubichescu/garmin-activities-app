@@ -2,9 +2,8 @@ package ro.garmin.activity.web.converter;
 
 
 import org.springframework.stereotype.Component;
-import ro.garmin.activity.core.model.Activity;
-import ro.garmin.activity.core.model.CyclingActivity;
-import ro.garmin.activity.web.dto.ActivityDto;
+import ro.garmin.activity.core.model.activities.CyclingActivity;
+import ro.garmin.activity.core.model.activities.Unit;
 import ro.garmin.activity.web.dto.CyclingActivityDto;
 
 
@@ -14,6 +13,7 @@ public class CyclingActivityConverter extends BaseConverter<CyclingActivity, Cyc
     @Override
     public CyclingActivity convertDtoToModel(CyclingActivityDto dto) {
         CyclingActivity activity = new CyclingActivity(dto.getName(), dto.getDateTime(), dto.getDuration(), dto.getDistance(), dto.getAvgSpeed());
+        activity.setType(Unit.CYCLING);
         activity.setId(dto.getId());
 
         return activity;
@@ -26,6 +26,7 @@ public class CyclingActivityConverter extends BaseConverter<CyclingActivity, Cyc
                                                                 cyclingActivity.getDuration(),
                                                                 cyclingActivity.getDistance(),
                                                                 cyclingActivity.getAvgSpeed());
+        activityDto.setType(Unit.CYCLING);
         activityDto.setId(cyclingActivity.getId());
         return activityDto;
     }

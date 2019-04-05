@@ -1,7 +1,7 @@
-package ro.garmin.activity.core.repository;
-
-import ro.garmin.activity.core.model.Activity;
-
-public interface ActivityRepository extends GeneralRepository<Activity, Long> {
-
-}
+//package ro.garmin.activity.core.repository;
+//
+//import ro.garmin.activity.core.model.activities.Activity;
+//
+//public interface ActivityRepository extends GeneralRepository<Activity, Long> {
+//
+//}

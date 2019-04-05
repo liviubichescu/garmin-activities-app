@@ -1,4 +1,4 @@
-package ro.garmin.activity.core.model;
+package ro.garmin.activity.core.model.activities;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
