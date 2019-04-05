@@ -9,6 +9,6 @@ import java.io.Serializable;
 @Getter
 @Setter
 @ToString
-public class BaseDto implements Serializable {
+public abstract class BaseDto implements Serializable {
     private Long id;
 }

@@ -1,7 +1,7 @@
 package ro.garmin.activity.web.converter;
 
 
-import ro.garmin.activity.core.model.activities.BaseEntity;
+import ro.garmin.activity.core.domain.BaseEntity;
 import ro.garmin.activity.web.dto.BaseDto;
 
 import java.util.Collection;
