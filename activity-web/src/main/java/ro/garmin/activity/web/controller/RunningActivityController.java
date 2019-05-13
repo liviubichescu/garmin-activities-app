@@ -1,17 +1,16 @@
 package ro.garmin.activity.web.controller;
 
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ro.garmin.activity.core.domain.activities.Activity;
-import ro.garmin.activity.core.domain.activities.RunningActivity;
-import ro.garmin.activity.core.service.ActivityService;
-import ro.garmin.activity.web.converter.Converter;
+import ro.garmin.activity.core.domain.Activity;
+import ro.garmin.activity.core.domain.RunningActivity;
+import ro.garmin.activity.core.service.RunningActivityService;
 import ro.garmin.activity.web.converter.RunningActivityConverter;
-import ro.garmin.activity.web.dto.ActivityDto;
 import ro.garmin.activity.web.dto.RunningActivityDTO;
-import ro.garmin.activity.web.dto.SwimmingActivityDTO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,17 +19,24 @@ import java.util.List;
 @RestController
 public class RunningActivityController {
 
-    @Autowired
-    private ActivityService activityService;
+//    private static final Logger log = LoggerFactory.getLogger(RunningActivityController.class);
+
+    private final RunningActivityService runningActivityService;
+
+    private final RunningActivityConverter activityConverter;
 
     @Autowired
-    private RunningActivityConverter activityConverter;
+    public RunningActivityController(RunningActivityService runningActivityService, RunningActivityConverter activityConverter) {
+        this.runningActivityService = runningActivityService;
+        this.activityConverter = activityConverter;
+    }
 
 
     @RequestMapping(value = "/runningActivities", method = RequestMethod.GET)
     List<Activity> getActivities() {
-
-        List<Activity> activities = activityService.getAllActivities();
+//        log.trace("getStudents");
+        List<RunningActivity> activities = runningActivityService.getAllRunningActivities();
+//        log.trace("getStudents: students={}", activities);
 
         return new ArrayList<>(activities);
     }
@@ -40,18 +46,16 @@ public class RunningActivityController {
 
         RunningActivity activity = activityConverter.convertDtoToModel(runningActivityDTO);
 
-        activityService.save(activity);
+        runningActivityService.save(activity);
 
         return activityConverter.convertModelToDto(activity);
 
     }
 
-
-
     @RequestMapping(value = "/runningActivities/{id}", method = RequestMethod.DELETE)
     ResponseEntity<?> deleteActivity(@PathVariable("id") Long id){
 
-        activityService.remove(id);
+        runningActivityService.remove(id);
 
         return new ResponseEntity<>(HttpStatus.OK);
     }

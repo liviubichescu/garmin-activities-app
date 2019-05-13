@@ -2,7 +2,7 @@ package ro.garmin.activity.web.converter;
 
 
 import org.springframework.stereotype.Component;
-import ro.garmin.activity.core.domain.activities.RunningActivity;
+import ro.garmin.activity.core.domain.RunningActivity;
 import ro.garmin.activity.web.dto.RunningActivityDTO;
 
 

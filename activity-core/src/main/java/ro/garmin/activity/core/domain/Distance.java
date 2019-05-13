@@ -2,11 +2,12 @@ package ro.garmin.activity.core.domain;
 
 
 import lombok.*;
-import ro.garmin.activity.core.domain.utils.MeasurementUnit;
+import ro.garmin.activity.core.domain.enumsType.MeasurementUnit;
 
-import javax.persistence.Entity;
+import javax.persistence.Embeddable;
 
-@Entity
+//@Entity
+@Embeddable
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

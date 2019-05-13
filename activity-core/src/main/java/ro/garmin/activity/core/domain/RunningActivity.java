@@ -1,14 +1,14 @@
-package ro.garmin.activity.core.domain.activities;
+package ro.garmin.activity.core.domain;
 
 import lombok.*;
-import ro.garmin.activity.core.domain.Distance;
-import ro.garmin.activity.core.domain.utils.ActivityType;
+import ro.garmin.activity.core.domain.enumsType.ActivityType;
 
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
+@Table(name = "running_act")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -24,7 +24,7 @@ public class RunningActivity extends Activity {
     // minutes/km
     private Double pace; // in cate minute parcurgi un km
 
-    @Builder
+//    @Builder
     public RunningActivity(String name, ActivityType type, Date dateTime, long duration, Distance distance, Integer elevation, Double slope, Double pace) {
         super(name, type, dateTime, duration, distance);
         this.elevation = elevation;

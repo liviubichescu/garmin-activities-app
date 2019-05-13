@@ -81,7 +81,7 @@ public class JPAConfig {
 
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(vendorAdapter);
-        factory.setPackagesToScan("ro.garmin.activity.core.model");
+        factory.setPackagesToScan("ro.garmin.activity.core.domain");
         factory.setDataSource(dataSource());
         factory.afterPropertiesSet();
         return factory.getObject();

@@ -1,16 +1,16 @@
-package ro.garmin.activity.core.domain.activities;
-
+package ro.garmin.activity.core.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
-import ro.garmin.activity.core.domain.BaseEntity;
-import ro.garmin.activity.core.domain.Distance;
-import ro.garmin.activity.core.domain.utils.ActivityType;
+import ro.garmin.activity.core.domain.enumsType.ActivityType;
 
-import javax.persistence.Entity;
+import javax.persistence.Embedded;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import java.util.Date;
 
-@Entity
+
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -19,6 +19,7 @@ import java.util.Date;
 @ToString(callSuper = true)
 //@DiscriminatorColumn(discriminatorType = DiscriminatorType.STRING, name = "TYPE")
 //@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+//@Component
 public abstract class Activity extends BaseEntity<Long> {
 
     protected String name;
@@ -26,7 +27,7 @@ public abstract class Activity extends BaseEntity<Long> {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     protected Date dateTime;
     protected long duration;
+    @Embedded
     protected Distance distance;
-
 
 }

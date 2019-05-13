@@ -1,46 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration>
-    <Properties>
-        <Property name="filename">./activityInsights.log</Property>
-        <Property name="filenamePattern">activityInsights-%i.log</Property>
-        <Property name="pattern">%d{ISO8601} %-5p [%t]: %-36.36c{1} - %m %n
-        </Property>
-    </Properties>
+<!--<Configuration>-->
+    <!--<Properties>-->
+        <!--<Property name="filename">./activityInsights.log</Property>-->
+        <!--<Property name="filenamePattern">activityInsights-%i.log</Property>-->
+        <!--<Property name="pattern">%d{ISO8601} %-5p [%t]: %-36.36c{1} - %m %n-->
+        <!--</Property>-->
+    <!--</Properties>-->
 
+    <!--<Appenders>-->
+        <!--&lt;!&ndash; ======= &ndash;&gt;-->
+        <!--&lt;!&ndash; CONSOLE &ndash;&gt;-->
+        <!--&lt;!&ndash; ======= &ndash;&gt;-->
+        <!--<Console name="Console" target="SYSTEM_OUT">-->
+            <!--<PatternLayout pattern="${pattern}"/>-->
+        <!--</Console>-->
+        <!--&lt;!&ndash; ========= &ndash;&gt;-->
+        <!--&lt;!&ndash; ROOT File &ndash;&gt;-->
+        <!--&lt;!&ndash; ========= &ndash;&gt;-->
+        <!--<RollingFile name="File" fileName="${filename}"-->
+                     <!--filePattern="${filenamePattern}">-->
+            <!--<PatternLayout pattern="${pattern}"/>-->
+            <!--<Policies>-->
+                <!--<SizeBasedTriggeringPolicy size="10 MB"/>-->
+            <!--</Policies>-->
+        <!--</RollingFile>-->
+    <!--</Appenders>-->
+
+    <!--<Loggers>-->
+
+        <!--&lt;!&ndash; Spring framework &ndash;&gt;-->
+        <!--&lt;!&ndash;<Logger name="org.hibernate.stat" level="INFO" />&ndash;&gt;-->
+        <!--<Logger name="org.springframework.data" level="WARN"/>-->
+        <!--<Logger name="org.springframework.web" level="WARN"/>-->
+        <!--<Logger name="org.springframework.http.converter.json" level="WARN"/>-->
+        <!--<Logger name="com.fasterxml.jackson.databind" level="WARN"/>-->
+        <!--<Logger name="ro.garmin.activity" level="TRACE"/>-->
+
+        <!--&lt;!&ndash; ROOT &ndash;&gt;-->
+        <!--<Root level="WARN">-->
+            <!--<AppenderRef ref="Console"/>-->
+            <!--<AppenderRef ref="File"/>-->
+        <!--</Root>-->
+
+    <!--</Loggers>-->
+<!--</Configuration>-->
+
+
+
+
+
+<Configuration status="WARN">
     <Appenders>
-        <!-- ======= -->
-        <!-- CONSOLE -->
-        <!-- ======= -->
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="${pattern}"/>
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
-        <!-- ========= -->
-        <!-- ROOT File -->
-        <!-- ========= -->
-        <RollingFile name="File" fileName="${filename}"
-                     filePattern="${filenamePattern}">
-            <PatternLayout pattern="${pattern}"/>
-            <Policies>
-                <SizeBasedTriggeringPolicy size="10 MB"/>
-            </Policies>
-        </RollingFile>
     </Appenders>
-
     <Loggers>
-
-        <!-- Spring framework -->
-        <!--<Logger name="org.hibernate.stat" level="INFO" />-->
-        <Logger name="org.springframework.data" level="WARN"/>
-        <Logger name="org.springframework.web" level="WARN"/>
-        <Logger name="org.springframework.http.converter.json" level="WARN"/>
-        <Logger name="com.fasterxml.jackson.databind" level="WARN"/>
-        <Logger name="ro.garmin.activity" level="TRACE"/>
-
-        <!-- ROOT -->
-        <Root level="WARN">
+        <Root level="DEBUG">
             <AppenderRef ref="Console"/>
-            <AppenderRef ref="File"/>
         </Root>
-
     </Loggers>
 </Configuration>

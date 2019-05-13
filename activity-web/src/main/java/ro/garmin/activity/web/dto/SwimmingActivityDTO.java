@@ -1,9 +1,9 @@
 package ro.garmin.activity.web.dto;
 
 import lombok.*;
+import ro.garmin.activity.core.domain.enumsType.ActivityType;
 import ro.garmin.activity.core.domain.Distance;
-import ro.garmin.activity.core.domain.utils.ActivityType;
-import ro.garmin.activity.core.domain.utils.StrokeType;
+import ro.garmin.activity.core.domain.enumsType.StrokeType;
 
 import java.util.Date;
 

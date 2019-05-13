@@ -1,15 +1,18 @@
 package ro.garmin.activity.core.service;
 
-import ro.garmin.activity.core.domain.activities.Activity;
+import ro.garmin.activity.core.domain.Activity;
+import ro.garmin.activity.core.domain.RunningActivity;
+import ro.garmin.activity.core.domain.SwimmingActivity;
+
 import java.util.List;
 
-public interface ActivityService {
+public interface SwimmingActivityService {
 
     /**
      * Save an activity
      * @param activity activity
      */
-    void save(Activity activity);
+    void save(SwimmingActivity activity);
 
     /**
      * Remove an activity based on the id witch is unique
@@ -28,5 +31,5 @@ public interface ActivityService {
      * Retrieves all the domain from database
      * @return a list of domain
      */
-    List<Activity> getAllActivities();
+    List<SwimmingActivity> getAllSwimmingActivities();
 }

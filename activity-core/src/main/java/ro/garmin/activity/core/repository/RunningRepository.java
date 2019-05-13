@@ -1,6 +1,6 @@
 package ro.garmin.activity.core.repository;
 
-import ro.garmin.activity.core.domain.activities.RunningActivity;
+import ro.garmin.activity.core.domain.RunningActivity;
 
 public interface RunningRepository extends GeneralRepository<RunningActivity, Long> {
 }

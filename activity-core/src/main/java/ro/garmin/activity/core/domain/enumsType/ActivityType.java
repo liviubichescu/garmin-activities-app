@@ -1,4 +1,4 @@
-package ro.garmin.activity.core.domain.utils;
+package ro.garmin.activity.core.domain.enumsType;
 
 public enum ActivityType {
 
@@ -15,4 +15,5 @@ public enum ActivityType {
     public String toString() {
         return type;
     }
+
 }

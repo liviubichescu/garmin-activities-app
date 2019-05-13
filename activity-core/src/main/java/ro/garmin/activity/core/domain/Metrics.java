@@ -1,23 +1,23 @@
-package ro.garmin.activity.core.domain.statistics;
+package ro.garmin.activity.core.domain;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-import ro.garmin.activity.core.domain.utils.ActivityType;
+import lombok.*;
+import ro.garmin.activity.core.domain.enumsType.ActivityType;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /*
  * Inregistreaza metrice pentru toate activitatile de un anumit tip
  */
 
 @Entity
-//@NoArgsConstructor
 //@AllArgsConstructor
+//@NoArgsConstructor
+@Table(name = "metrics")
 @Getter
 @Setter
 @ToString(callSuper = true)
-public abstract class Metrics {
+public class Metrics extends BaseEntity<Long> {
 
     protected ActivityType activityType; // tip de activitate
     protected int activitiesCount; // cate activitati avem

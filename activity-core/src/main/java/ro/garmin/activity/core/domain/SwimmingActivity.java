@@ -1,15 +1,15 @@
-package ro.garmin.activity.core.domain.activities;
+package ro.garmin.activity.core.domain;
 
 import lombok.*;
-import ro.garmin.activity.core.domain.Distance;
-import ro.garmin.activity.core.domain.utils.ActivityType;
-import ro.garmin.activity.core.domain.utils.StrokeType;
+import ro.garmin.activity.core.domain.enumsType.ActivityType;
+import ro.garmin.activity.core.domain.enumsType.StrokeType;
 
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
+@Table(name = "swimming_act")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
